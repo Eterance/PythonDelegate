@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+    
+[project]
+name = "pythondelegate"
+description = "A CSharp like delegate implement for Python"
+readme = "README.md"
+keywords= ["Delegate", "Callback"]
+requires-python = ">=3.8"
+version = "0.1.0"
+authors = [
+    { name="Eterance"},
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]

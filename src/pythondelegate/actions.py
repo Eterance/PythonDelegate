@@ -108,3 +108,63 @@ class Action2Args(Delegate, Generic[T1, T2]):
     # Override
     def Invoke(self, arg1:T1, arg2:T2):
         super().Invoke(arg1, arg2)
+
+class Action3Args(Delegate, Generic[T1, T2, T3]):
+    """
+    Represents a list of methods that have 3 parameters and do not return value.
+    """
+    # Override
+    @classmethod
+    def Combine(cls, callable_list: list[Callable]) -> 'Action3Args[T1, T2, T3]':
+        return super().Combine(callable_list)
+    
+    # Override
+    @classmethod
+    def Remove(cls, delegate: 'Action3Args[T1, T2, T3]', callable_list: list[Callable]) -> 'Action3Args[T1, T2, T3]':
+        return super().Remove(delegate, callable_list)
+    
+    # Override
+    def __add__(self, item: Callable) -> 'Action3Args[T1, T2, T3]':
+        return super().__add__(item)
+    
+    # Override
+    def __sub__(self, item: Callable) -> 'Action3Args[T1, T2, T3]':
+        return super().__sub__(item)
+    
+    # Override
+    def __call__(self, arg1: T1, arg2: T2, arg3: T3):        
+        self.Invoke(arg1, arg2, arg3)
+    
+    # Override
+    def Invoke(self, arg1: T1, arg2: T2, arg3: T3):
+        super().Invoke(arg1, arg2, arg3)
+
+class Action4Args(Delegate, Generic[T1, T2, T3, T4]):
+    """
+    Represents a list of methods that have 4 parameters and do not return value.
+    """
+    # Override
+    @classmethod
+    def Combine(cls, callable_list: list[Callable]) -> 'Action4Args[T1, T2, T3, T4]':
+        return super().Combine(callable_list)
+    
+    # Override
+    @classmethod
+    def Remove(cls, delegate: 'Action4Args[T1, T2, T3, T4]', callable_list: list[Callable]) -> 'Action4Args[T1, T2, T3, T4]':
+        return super().Remove(delegate, callable_list)
+    
+    # Override
+    def __add__(self, item: Callable) -> 'Action4Args[T1, T2, T3, T4]':
+        return super().__add__(item)
+    
+    # Override
+    def __sub__(self, item: Callable) -> 'Action4Args[T1, T2, T3, T4]':
+        return super().__sub__(item)
+    
+    # Override
+    def __call__(self, arg1: T1, arg2: T2, arg3: T3, arg4: T4):        
+        self.Invoke(arg1, arg2, arg3, arg4)
+    
+    # Override
+    def Invoke(self, arg1: T1, arg2: T2, arg3: T3, arg4: T4):
+        super().Invoke(arg1, arg2, arg3, arg4)

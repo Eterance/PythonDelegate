@@ -126,3 +126,76 @@ class Func2Arg(Delegate, Generic[T1, T2, TRESULT]):
         for function in self._functions:
             result = function(arg1, arg2)
         return result
+
+class Func3Arg(Delegate, Generic[T1, T2, T3, TRESULT]):
+    """
+    Represents a list of methods that have 3 parameters and return a TRESULT type value.
+    """
+    # Override
+    @classmethod
+    def Combine(cls, callable_list: 'list[Callable]')->'Func3Arg[T1, T2, T3, TRESULT]':
+        return super().Combine(callable_list)
+    
+    # Override
+    @classmethod
+    def Remove(cls, delegate: 'Func3Arg[T1, T2, T3, TRESULT]', callable_list: list[Callable])->'Func3Arg[T1, T2, T3, TRESULT]':
+        return super().Remove(delegate, callable_list)
+    
+    # Override
+    def __add__(self, item: Callable)->'Func3Arg[T1, T2, T3, TRESULT]':
+        return super().__add__(item)
+    
+    # Override
+    def __sub__(self, item: Callable)->'Func3Arg[T1, T2, T3, TRESULT]':
+        return super().__sub__(item)
+    
+    # Override
+    def __call__(self, arg1: T1, arg2: T2, arg3: T3):
+        return self.Invoke(arg1, arg2, arg3)
+    
+    # Override
+    def Invoke(self, arg1: T1, arg2: T2, arg3: T3) -> TRESULT:
+        """
+        Return the result of the last invoked method.
+        """
+        result = None
+        for function in self._functions:
+            result = function(arg1, arg2, arg3)
+        return result
+
+class Func4Arg(Delegate, Generic[T1, T2, T3, T4, TRESULT]):
+    """
+    Represents a list of methods that have 4 parameters and return a TRESULT type value.
+    """
+
+    # Override
+    @classmethod
+    def Combine(cls, callable_list: list[Callable]) -> 'Func4Arg[T1, T2, T3, T4, TRESULT]':
+        return super().Combine(callable_list)
+
+    # Override
+    @classmethod
+    def Remove(cls, delegate: 'Func4Arg[T1, T2, T3, T4, TRESULT]', callable_list: list[Callable]) -> 'Func4Arg[T1, T2, T3, T4, TRESULT]':
+        return super().Remove(delegate, callable_list)
+
+    # Override
+    def __add__(self, item: Callable) -> 'Func4Arg[T1, T2, T3, T4, TRESULT]':
+        return super().__add__(item)
+
+    # Override
+    def __sub__(self, item: Callable) -> 'Func4Arg[T1, T2, T3, T4, TRESULT]':
+        return super().__sub__(item)
+
+    # Override
+    def __call__(self, arg1: T1, arg2: T2, arg3: T3, arg4: T4) -> TRESULT:
+        return self.Invoke(arg1, arg2, arg3, arg4)
+
+    # Override
+    def Invoke(self, arg1: T1, arg2: T2, arg3: T3, arg4: T4) -> TRESULT:
+        """
+        Return the result of the last invoked method.
+        """
+        result = None
+        for function in self._functions:
+            result = function(arg1, arg2, arg3, arg4)
+        return result

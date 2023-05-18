@@ -1,5 +1,5 @@
 from functools import singledispatchmethod
-from typing import Union
+from typing import Optional, Union
 import inspect
 from types import FunctionType, MethodType
 from typing import Any, Callable, Final, List, NoReturn, TypeVar, Generic, final
@@ -12,7 +12,7 @@ class Delegate():
     The 'delegate' here is a little different from the delegate in C# (or maybe it's a lot different).\n
     Nested delegates are not allowed (delegate objects can't be add to delegate._functions).\n
     """
-    def __init__(self, callable_list:list[Callable]=None, is_allow_duplicate_method:bool=True):
+    def __init__(self, callable_list:Optional[list[Callable]]=None, is_allow_duplicate_method:bool=True):
         """
         Initialize the delegate.
 

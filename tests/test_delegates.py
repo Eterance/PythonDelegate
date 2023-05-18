@@ -11,7 +11,7 @@ sys.path.append(SRC_DIR)
 from pythondelegate.delegate import Delegate
 from pythondelegate.actions import Action1Arg, Action2Args
 from pythondelegate.funcs import Func1Arg, Func2Arg
-from pythondelegate.events import EventHandler
+from pythondelegate.event_handler import EventHandler
 from pythondelegate.event_args import EventArgs
 
 class AAA():

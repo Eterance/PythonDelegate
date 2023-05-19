@@ -14,5 +14,6 @@ from pythondelegate.funcs import Func2Arg
 def add(a:int, b:int):
     return a + b, f"a + b = {a+b}"
     
-func = Func2Arg[int, int, Tuple[int, str]]([add])
-result, process = func(2, 8)
+func = Func2Arg[str, str, int]([add])
+result, process = func.Invoke(2, 8)
+print(f"{result}, {process}")

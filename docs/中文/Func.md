@@ -27,4 +27,3 @@ result, process = func(2, 8)
 ## 另请参阅
 
 - [Delegate 类](Delegate.md)
-- 

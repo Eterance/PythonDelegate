@@ -7,8 +7,9 @@ name = "pythondelegate"
 description = "A CSharp like delegate implement for Python"
 readme = "README.md"
 keywords= ["Delegate", "Callback"]
-requires-python = ">=3.8"
-version = "0.1.0"
+requires-python = ">=3.10"
+version = "0.1.1"
+url = "https://github.com/Eterance/PythonDelegate"
 authors = [
     { name="Eterance"},
 ]
